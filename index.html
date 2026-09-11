@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>НАРУЖУ — Чувство Края · альбом</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <div id="loader">
+    <div class="loader-name">НАРУЖУ</div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+  </div>
+
+  <nav class="site-nav">
+    <a class="nav-logo" href="#"><img src="челик.png" alt="НАРУЖУ"></a>
+    <ul class="nav-links">
+      <li><a href="#tracks">Треки</a></li>
+      <li><a href="#about">Альбом</a></li>
+      <li><a href="#support">Поддержать</a></li>
+    </ul>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-photo">
+      <img src="Cover.png" alt="Обложка альбома НАРУЖУ">
+      <div class="hero-photo-gradient"></div>
+    </div>
+    <div class="hero-number">001 — АЛЬБОМ · 08 ТРЕКОВ</div>
+    <h1 class="hero-title"><span>НАРУЖУ</span></h1>
+    <div class="hero-sub">
+      <p class="hero-desc">Чувство Края<br>Восемь треков. То, что было внутри, выходит наружу.<br>Жёстко. Прямо. Без компромиссов.</p>
+      <div class="hero-scroll"><div class="scroll-line"></div>Листай</div>
+    </div>
+  </section>
+
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">НАРУЖУ<span>✦</span></span>
+      <span class="marquee-item">ЧУВСТВО КРАЯ<span>✦</span></span>
+      <span class="marquee-item">АЛЬБОМ · 08 ТРЕКОВ<span>✦</span></span>
+      <span class="marquee-item">СЛОВО — НАРУЖУ<span>✦</span></span>
+      <span class="marquee-item">НАРУЖУ<span>✦</span></span>
+      <span class="marquee-item">ЧУВСТВО КРАЯ<span>✦</span></span>
+      <span class="marquee-item">АЛЬБОМ · 08 ТРЕКОВ<span>✦</span></span>
+      <span class="marquee-item">СЛОВО — НАРУЖУ<span>✦</span></span>
+      <span class="marquee-item">НАРУЖУ<span>✦</span></span>
+      <span class="marquee-item">ЧУВСТВО КРАЯ<span>✦</span></span>
+      <span class="marquee-item">АЛЬБОМ · 08 ТРЕКОВ<span>✦</span></span>
+      <span class="marquee-item">СЛОВО — НАРУЖУ<span>✦</span></span>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <section class="tracks-section" id="tracks">
+      <div class="section-label">002 — Треки</div>
+      <div class="releases-grid section-shell fade-in" id="releases-grid" aria-label="Треки альбома"></div>
+
+      <div class="album-layout section-shell fade-in">
+        <section class="track-column">
+          <section class="player-card" aria-label="Музыкальный плеер">
+            <div class="player-topline"><span class="live-dot"></span><span id="player-status">Готов к прослушиванию</span><span class="player-track-count">/ 08</span></div>
+            <div class="player-title-row"><div><p class="mini-label">Сейчас играет</p><h2 id="current-title">Ловушка</h2><p class="player-album">НАРУЖУ</p></div><button class="icon-button" id="mute-button" type="button" aria-label="Выключить звук">◖</button></div>
+            <audio id="audio" preload="metadata"></audio>
+            <button class="waveform-button" id="waveform-button" type="button" aria-label="Перемотать трек"><canvas id="waveform" aria-hidden="true"></canvas></button>
+            <div class="time-row"><span id="current-time">00:00</span><span id="duration">00:00</span></div>
+            <div class="controls"><button class="control-button" id="prev-button" type="button" aria-label="Предыдущий трек">↞</button><button class="play-button" id="play-button" type="button" aria-label="Воспроизвести">▶</button><button class="control-button" id="next-button" type="button" aria-label="Следующий трек">↠</button><label class="volume-control" aria-label="Громкость"><span>VOL</span><input id="volume" type="range" min="0" max="1" value="0.8" step="0.01"></label></div>
+          </section>
+          <section class="track-detail" id="track-detail" aria-labelledby="track-detail-title">
+            <div class="detail-heading">
+              <p class="eyebrow">О треке</p>
+              <h2 id="track-detail-title">Ловушка</h2>
+              <p class="detail-description">Описание трека появится здесь.</p>
+            </div>
+            <div class="lyrics-column">
+              <p class="mini-label">Текст</p>
+              <pre id="lyrics"></pre>
+            </div>
+          </section>
+        </section>
+        <aside class="playlist-panel" aria-labelledby="playlist-title">
+          <div class="panel-heading"><p class="eyebrow">Треклист</p><h2 id="playlist-title">08 треков</h2></div>
+          <div class="tracklist" id="tracklist" aria-label="Треклист"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="info-grid section-shell" id="about">
+      <div class="section-label">003 — Об альбоме</div>
+      <div class="about-grid">
+        <article class="cover-card">
+          <div class="about-img-wrap">
+            <img src="Cover.png" alt="Обложка альбома НАРУЖУ">
+            <div class="about-img-tag">ЧУВСТВО КРАЯ — АЛЬБОМ</div>
+          </div>
+        </article>
+        <div class="about-content">
+          <h2 class="about-headline fade-in">НАРУЖУ<em>.</em></h2>
+          <div class="album-description fade-in">
+            <p>«Наружу» — электронный альбом о внутреннем распаде, несвободе, вере и попытке вырваться из собственной клетки. Путь от отчаяния к свободе.</p>
+            <p>Это пространство между человеком и самим собой, между страхом и желанием жить, между разрушением и попыткой сохранить целостность.</p>
+            <p>Здесь нет готовых ответов, единственно правильных трактовок или заранее определённой точки назначения. Это движение через состояние, в котором привычные границы между телом, сознанием, верой, реальностью и внутренним миром постепенно теряют устойчивость.</p>
+            <p>«Наружу» — не инструкция и не исповедь. Это попытка выйти за пределы того, что стало тесным.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-text-block fade-in">
+        <h3 class="info-heading">Об исполнителе</h3>
+        <p class="project-description">Чувство Края — независимый электронный проект, работающий на пересечении техно, психоделического транса и атмосферной электроники. Музыка строится вокруг плотного саунд-дизайна, текстур и авторских текстов, в которых личное переплетается с наблюдением за человеком и окружающим миром.</p>
+      </div>
+    </section>
+
+    <section class="release-actions section-shell" id="support">
+      <div class="section-label">004 — Скачать / Поддержать</div>
+      <div class="support-grid">
+        <div class="download-block">
+          <p class="eyebrow">Архив</p>
+          <a href="download.html" class="download-link">СКАЧАТЬ АЛЬБОМ</a>
+          <p class="placeholder">Ссылка на ZIP / WAV / FLAC появится здесь.</p>
+          <a id="download-link" class="outline-link is-disabled" href="#" aria-disabled="true">Ссылка скоро <span>↗</span></a>
+        </div>
+        <div class="support-block">
+          <p class="eyebrow">Поддержка</p>
+          <h2>ПОДДЕРЖАТЬ<br>АЛЬБОМ</h2>
+          <div class="support-row">
+            <div class="qr-placeholder" id="support-qr">QR<br><small>скоро</small></div>
+            <div class="support-copy">
+              <p class="placeholder">QR-код и ссылка на оплату появятся здесь.</p>
+              <a id="support-link" class="outline-link is-disabled" href="#" aria-disabled="true">Поддержать <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="platforms section-shell" id="links">
+      <div class="section-label">005 — Ссылки</div>
+      <div class="contact-inner fade-in">
+        <h2 class="contact-title">ВСЕ<br>ССЫЛКИ<em>.</em></h2>
+        <div class="platform-list">
+          <span>Spotify</span>
+          <span>Apple Music</span>
+          <span>Bandcamp</span>
+          <span>SoundCloud</span>
+          <span>Telegram</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer section-shell">
+    <span class="footer-copy">© 2026 ЧУВСТВО КРАЯ — НАРУЖУ · АЛЬБОМ</span>
+    <span class="footer-logo">НАРУЖУ</span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="waveforms.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

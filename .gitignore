@@ -1,0 +1,5 @@
+.DS_Store
+*.zip
+Треки/*.m4a
+*.tmp
+*.log
