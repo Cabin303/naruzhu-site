@@ -319,7 +319,7 @@ pre { font-family: inherit; white-space: pre-wrap; }
 .volume-control span {
   font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: .2em; color: rgba(255,255,255,.48);
 }
-.volume-control input { flex: none; width: 18px; height: 58px; accent-color: #fff; cursor: none; }
+.volume-control input { flex: none; width: 18px; height: 58px; cursor: none; }
 input[type=range] {
   -webkit-appearance: none; appearance: none; background: transparent;
   writing-mode: vertical-lr; direction: rtl;
@@ -366,7 +366,7 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
   padding: 26px 26px 18px; border-bottom: 1px solid var(--border);
   display: flex; justify-content: space-between; align-items: center; gap: 16px;
 }
-.panel-heading h2 { font-family: 'Space Mono', monospace; font-size: 22px; font-weight: 700; margin-top: 8px; }
+.panel-heading .eyebrow { margin-bottom: 0; }
 .playlist-panel > .section-content#tracklist-content { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
 .playlist-panel > .section-content#tracklist-content > .tracklist { flex: 1; overflow-y: auto; min-height: 0; }
 .tracklist { overflow-y: auto; min-height: 0; }

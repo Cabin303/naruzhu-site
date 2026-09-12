@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
   <title>НАРУЖУ — Чувство Края · альбом</title>
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -71,7 +72,7 @@
           <section class="player-card" aria-label="Музыкальный плеер">
             <div class="player-topline"><span class="live-dot"></span><span id="player-status">Готов к прослушиванию</span><span class="player-track-count">/ 08</span></div>
             <div class="player-title-row"><div><p class="mini-label">Сейчас играет</p><h2 id="current-title">Ловушка</h2><p class="player-album">НАРУЖУ</p></div></div>
-            <audio id="audio" preload="metadata"></audio>
+            <audio id="audio" preload="none"></audio>
             <button class="waveform-button" id="waveform-button" type="button" aria-label="Перемотать трек"><canvas id="waveform" aria-hidden="true"></canvas></button>
             <div class="time-row"><span id="current-time">00:00</span><span id="duration">00:00</span></div>
             <div class="controls"><button class="control-button" id="prev-button" type="button" aria-label="Предыдущий трек">↞</button><button class="play-button" id="play-button" type="button" aria-label="Воспроизвести"><span class="play-btn-icon play-btn-icon-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="play-btn-icon play-btn-icon-pause" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4.5" height="14" rx="1.2"/><rect x="13.5" y="5" width="4.5" height="14" rx="1.2"/></svg></span></button><button class="control-button" id="next-button" type="button" aria-label="Следующий трек">↠</button><label class="volume-control" aria-label="Громкость"><span>VOL</span><input id="volume" type="range" min="0" max="1" value="0.8" step="0.01"></label></div>
@@ -93,9 +94,9 @@
             </div>
           </section>
         </section>
-        <aside class="playlist-panel" aria-labelledby="playlist-title">
+        <aside class="playlist-panel" aria-label="Треклист">
           <div class="panel-heading">
-            <div><p class="eyebrow">Треклист</p><h2 id="playlist-title">08 треков</h2></div>
+            <p class="eyebrow">Треклист</p>
             <button class="toggle-btn" id="tracklist-toggle" type="button" aria-expanded="true" aria-controls="tracklist-content"><svg class="toggle-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5L6 8.5L10 4.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
           </div>
           <div class="section-content" id="tracklist-content">
@@ -110,7 +111,7 @@
       <div class="about-grid">
         <article class="cover-card">
           <div class="about-img-wrap">
-            <img src="Cover.png" alt="Обложка альбома НАРУЖУ">
+            <img src="Cover.png" alt="Обложка альбома НАРУЖУ" loading="lazy" decoding="async">
             <div class="about-img-tag">ЧУВСТВО КРАЯ — АЛЬБОМ</div>
           </div>
         </article>
@@ -142,7 +143,7 @@
           <p class="eyebrow">Поддержка</p>
           <h2 id="support-link">ПОДДЕРЖАТЬ<br>АЛЬБОМ</h2>
           <a class="qr-placeholder support-qr" id="support-qr" href="https://yoomoney.ru/to/4100119626206613" aria-label="Поддержать альбом">
-            <img src="yoomoney_donation_qr.png" alt="QR-код для поддержки альбома">
+            <img src="yoomoney_donation_qr.png" alt="QR-код для поддержки альбома" loading="lazy" decoding="async">
           </a>
         </div>
       </div>
@@ -151,7 +152,7 @@
     <section class="platforms section-shell" id="links">
       <div class="section-label">005 — Ссылки</div>
       <a class="qr-link" href="https://band.link/DGePQ?qr=">
-        <img src="bandlink_qr.png" alt="QR-код — все ссылки на BandLink">
+        <img src="bandlink_qr.png" alt="QR-код — все ссылки на BandLink" loading="lazy" decoding="async">
       </a>
     </section>
 
