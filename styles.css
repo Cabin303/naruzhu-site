@@ -295,11 +295,19 @@ pre { font-family: inherit; white-space: pre-wrap; }
 .controls .volume-control { grid-column: 5; justify-self: end; }
 .play-button {
   width: 58px; height: 58px; border-radius: 50%;
+  background: #fff;
   border: 1px solid rgba(255,255,255,.35);
-  display: grid; place-items: center; font-size: 15px; line-height: 1;
-  margin-inline: 16px; transition: background .2s, border-color .2s, color .2s;
+  display: grid; place-items: center; color: #000; line-height: 0;
+  margin-inline: 16px; transition: background .2s, border-color .2s;
+  -webkit-tap-highlight-color: transparent;
 }
-.play-button:hover { background: #fff; border-color: #fff; color: #000; }
+.play-button .play-btn-icon { display: inline-flex; }
+.play-button .play-btn-icon-play { display: inline-flex; }
+.play-button .play-btn-icon-pause { display: none; }
+.play-button.is-playing .play-btn-icon-play { display: none; }
+.play-button.is-playing .play-btn-icon-pause { display: inline-flex; }
+.play-button svg { display: block; width: 20px; height: 20px; }
+.play-button:hover { background: #fff; border-color: #fff; }
 .control-button {
   font-family: 'Space Mono', monospace; font-size: 24px; padding: 6px;
   color: rgba(255,255,255,.62); transition: color .2s;
@@ -536,6 +544,8 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
   .track-row { padding: 17px 20px; grid-template-columns: 26px 1fr auto; gap: 10px; }
   .panel-heading { padding: 22px 20px 16px; }
   .controls .volume-control { width: 96px; }
+  .play-button { width: 50px; height: 50px; margin-inline: 12px; }
+  .play-button svg { width: 18px; height: 18px; }
   .stat { padding: 18px; }
   .support-row { gap: 22px; }
   .qr-placeholder { width: 92px; }
