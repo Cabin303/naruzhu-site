@@ -514,7 +514,7 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
   .track-column { grid-area: track-column; }
   .track-detail { height: auto; min-height: 420px; }
   .lyrics-column { border-left: 0; }
-  .lyrics-column .section-content#lyrics-content { overflow: visible; }
+  .lyrics-column .section-content#lyrics-content { overflow: visible; background: var(--dim); }
   .playlist-panel .tracklist { max-height: 320px; }
 }
 
