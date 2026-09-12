@@ -437,6 +437,25 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
 .platform-list span::before { content: '→'; opacity: 0; transform: translateX(-6px); transition: opacity .2s, transform .2s; color: #fff; }
 .platform-list span:hover { color: var(--ink); }
 .platform-list span:hover::before { opacity: 1; transform: translateX(0); }
+.bandlink {
+  font-family: 'Space Mono', monospace; font-size: 13px; letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(255,255,255,.62); display: inline-flex; align-items: center; gap: 10px; padding: 6px 2px;
+  transition: color .2s, transform .22s ease;
+}
+.bandlink span { font-size: 14px; }
+.bandlink:hover,
+.bandlink:focus-visible { color: #fff; transform: translateY(-2px); }
+.qr-link {
+  display: block;
+  width: min(260px, 100%);
+  margin-inline: auto;
+  line-height: 0;
+}
+.qr-link img { width: 100%; height: auto; display: block; }
+.qr-link { transition: transform .22s ease; }
+.qr-link:hover { transform: translateY(-2px); }
+.support-qr { transition: transform .22s ease; }
+.support-qr:hover { transform: translateY(-2px); }
 
 /* ── ПОДВАЛ ───────────────────────────────────────────── */
 .site-footer {
@@ -492,8 +511,22 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
 
 @media (max-width: 640px) {
   .nav-links { display: none; }
-  .hero-number { margin-bottom: 20px; }
-  .hero-sub { flex-direction: column; align-items: flex-start; gap: 22px; }
+  .hero-number { margin-bottom: 18px; }
+  .hero-desc {
+    width: 100%;
+    max-width: none;
+    font-size: .8rem;
+    line-height: 1.7;
+  }
+  .hero-sub {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+  .hero-scroll { margin-top: 24px; gap: 10px; }
+  .scroll-line { width: 34px; }
   .player-card { padding: 22px 20px 20px; }
   .nav-logo img { width: 28px; }
   .player-title-row h2 { font-size: 30px; }
