@@ -30,7 +30,6 @@ function togglePlay(){ if(audio.paused) playAudio(); else audio.pause(); }
 document.querySelector('#play-button').addEventListener('click',togglePlay);
 document.querySelector('#prev-button').addEventListener('click',()=>selectTrack(activeIndex-1));
 document.querySelector('#next-button').addEventListener('click',()=>selectTrack(activeIndex+1));
-document.querySelector('#mute-button').addEventListener('click',()=>{ audio.muted=!audio.muted; document.querySelector('#mute-button').textContent=audio.muted?'◗':'◖'; });
 tracklist.addEventListener('click',event=>{const row=event.target.closest('.track-row');if(row&&tracklist.contains(row))selectTrack(Number(row.dataset.index));});
 audio.addEventListener('play',()=>{syncPlayButton();status.textContent=`Играет · ${tracks[activeIndex].number} / 08`;});
 audio.addEventListener('pause',()=>{syncPlayButton();if(audio.currentTime>0&&audio.currentTime<audio.duration) status.textContent=`Пауза · ${tracks[activeIndex].number} / 08`;});

@@ -272,13 +272,6 @@ pre { font-family: inherit; white-space: pre-wrap; }
 }
 .player-title-row h2 { font-family: 'Space Mono', monospace; font-size: clamp(28px, 2.7vw, 44px); font-weight: 700; line-height: 1.12; }
 .player-album { font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: .12em; color: rgba(255,255,255,.45); margin-top: 5px; }
-.icon-button {
-  width: 38px; height: 38px; display: grid; place-items: center;
-  border: 1px solid var(--border); color: rgba(255,255,255,.62);
-  font-family: 'Space Mono', monospace; font-size: 16px;
-  transition: border-color .2s, color .2s;
-}
-.icon-button:hover { border-color: rgba(255,255,255,.4); color: var(--ink); }
 
 #audio { display: none; }
 .waveform-button {
@@ -377,7 +370,6 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
 }
 .about-content { padding-top: 8px; }
 .about-headline { font-family: 'Space Mono', monospace; font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 700; line-height: 1.04; margin-bottom: 32px; white-space: nowrap; }
-.about-headline em { font-style: normal; color: rgba(255,255,255,.3); }
 .about-text { font-size: .92rem; line-height: 1.9; color: rgba(255,255,255,.63); }
 .album-description { font-size: 1rem; line-height: 1.85; color: rgba(255,255,255,.66); max-width: 46ch; }
 .album-description p + p { margin-top: 1.1em; }
@@ -410,6 +402,17 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
 .outline-link span { font-size: 14px; }
 .outline-link.is-disabled { border-color: var(--border); color: rgba(255,255,255,.34); }
 .outline-link.is-disabled:hover { background: transparent; border-color: var(--border); color: rgba(255,255,255,.34); gap: 12px; }
+.download-block .outline-link {
+  transition: background .2s, color .2s, border-color .2s, gap .3s, transform .22s ease;
+}
+.download-block .outline-link:hover,
+.download-block .outline-link:focus-visible {
+  background: transparent;
+  border-color: rgba(255,255,255,.28);
+  color: #fff;
+  gap: 12px;
+  transform: translateY(-2px);
+}
 .support-row { display: flex; gap: 34px; align-items: stretch; }
 .qr-placeholder {
   width: 112px; aspect-ratio: 1; flex-shrink: 0;
@@ -425,7 +428,6 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
 /* ── ССЫЛКИ ───────────────────────────────────────────── */
 .contact-inner { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
 .contact-title { font-family: 'Space Mono', monospace; font-size: clamp(2.2rem, 6vw, 5rem); font-weight: 700; line-height: .92; }
-.contact-title em { font-style: normal; color: rgba(255,255,255,.32); }
 .platform-list { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
 .platform-list span {
   font-family: 'Space Mono', monospace; font-size: 13px; letter-spacing: .2em; text-transform: uppercase;
