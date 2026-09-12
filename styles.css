@@ -502,10 +502,10 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
 /* ── СКРОЛЛБАРЫ ───────────────────────────────────────── */
-.lyrics-column, .tracklist { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.22) transparent; }
-.lyrics-column::-webkit-scrollbar, .tracklist::-webkit-scrollbar { width: 4px; }
-.lyrics-column::-webkit-scrollbar-thumb, .tracklist::-webkit-scrollbar-thumb { background: rgba(255,255,255,.22); }
-.lyrics-column::-webkit-scrollbar-track, .tracklist::-webkit-scrollbar-track { background: transparent; }
+#lyrics-content, .tracklist { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.22) transparent; }
+#lyrics-content::-webkit-scrollbar, .tracklist::-webkit-scrollbar { width: 4px; }
+#lyrics-content::-webkit-scrollbar-thumb, .tracklist::-webkit-scrollbar-thumb { background: rgba(255,255,255,.22); }
+#lyrics-content::-webkit-scrollbar-track, .tracklist::-webkit-scrollbar-track { background: transparent; }
 
 /* ── АДАПТИВНОСТЬ ─────────────────────────────────────── */
 @media (max-width: 1000px) {
@@ -513,6 +513,7 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
   .playlist-panel { grid-area: playlist; }
   .track-column { grid-area: track-column; }
   .track-detail { height: auto; min-height: 420px; }
+  .lyrics-column { border-left: 0; }
   .playlist-panel .tracklist { max-height: 320px; }
 }
 
