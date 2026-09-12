@@ -312,18 +312,24 @@ pre { font-family: inherit; white-space: pre-wrap; }
   color: rgba(255,255,255,.62); transition: color .2s;
 }
 .control-button:hover { color: var(--ink); }
-.volume-control { display: flex; align-items: center; gap: 10px; width: 150px; }
+.volume-control {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  justify-self: end;
+}
 .volume-control span {
   font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: .2em; color: rgba(255,255,255,.48);
 }
-.volume-control input { flex: 1; accent-color: #fff; cursor: none; }
-input[type=range] { -webkit-appearance: none; background: transparent; height: 18px; }
-input[type=range]::-webkit-slider-runnable-track { height: 1px; background: rgba(255,255,255,.25); }
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none; width: 10px; height: 10px; border-radius: 50%;
-  background: #fff; margin-top: -4.5px;
+.volume-control input { flex: none; width: 18px; height: 58px; accent-color: #fff; cursor: none; }
+input[type=range] {
+  -webkit-appearance: none; appearance: none; background: transparent;
+  writing-mode: vertical-lr; direction: rtl;
 }
-input[type=range]::-moz-range-track { height: 1px; background: rgba(255,255,255,.25); }
+input[type=range]::-webkit-slider-runnable-track { width: 1px; background: rgba(255,255,255,.25); }
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 10px; height: 10px; border-radius: 50%;
+  background: #fff; border: 0; margin-left: -4.5px;
+}
+input[type=range]::-moz-range-track { width: 1px; background: rgba(255,255,255,.25); }
 input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; border-radius: 50%; background: #fff; }
 
 .track-detail {
@@ -340,13 +346,30 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
 }
 .detail-heading h2 { font-family: 'Space Mono', monospace; font-size: clamp(26px, 2.2vw, 38px); font-weight: 700; letter-spacing: -.02em; line-height: 1.05; }
 .detail-description { font-size: .9rem; line-height: 1.75; color: rgba(255,255,255,.63); margin-top: 18px; }
-.lyrics-column { border-left: 1px solid var(--border); padding-left: 30px; min-height: 0; overflow-y: auto; }
+.lyrics-column { border-left: 1px solid var(--border); padding-left: 30px; min-height: 0; display: flex; flex-direction: column; }
+.lyrics-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-shrink: 0; margin-bottom: 8px; }
+.lyrics-column .section-content#lyrics-content { flex: 1; min-height: 0; overflow-y: auto; }
 .lyrics-column pre { font-size: .92rem; line-height: 1.9; color: var(--ink); }
+.toggle-btn {
+  background: none; border: 0; padding: 10px; cursor: pointer;
+  display: grid; place-items: center; flex-shrink: 0; line-height: 0;
+  color: rgba(255,255,255,.5); transition: color .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.toggle-btn:hover { color: var(--ink); }
+.toggle-btn svg { display: block; }
+.toggle-chevron { transition: transform .2s ease; }
+.toggle-btn[aria-expanded="false"] .toggle-chevron { transform: rotate(-90deg); }
 
 /* ── ТРЕКЛИСТ ─────────────────────────────────────────── */
-.panel-heading { padding: 26px 26px 18px; border-bottom: 1px solid var(--border); }
+.panel-heading {
+  padding: 26px 26px 18px; border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+}
 .panel-heading h2 { font-family: 'Space Mono', monospace; font-size: 22px; font-weight: 700; margin-top: 8px; }
-.tracklist { flex: 1; overflow-y: auto; min-height: 0; }
+.playlist-panel > .section-content#tracklist-content { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.playlist-panel > .section-content#tracklist-content > .tracklist { flex: 1; overflow-y: auto; min-height: 0; }
+.tracklist { overflow-y: auto; min-height: 0; }
 .track-row {
   width: 100%; display: grid; grid-template-columns: 30px 1fr auto; gap: 12px; align-items: center;
   padding: 19px 26px; text-align: left;
@@ -542,8 +565,11 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
   .lyrics-column { border-left: 0; border-top: 1px solid var(--border); padding: 26px 0 0; }
   .track-row { padding: 17px 20px; grid-template-columns: 26px 1fr auto; gap: 10px; }
   .panel-heading { padding: 22px 20px 16px; }
-  .controls .volume-control { width: 96px; }
+  .controls .volume-control input { height: 52px; }
   .stat { padding: 18px; }
   .support-row { gap: 22px; }
   .qr-placeholder { width: 92px; }
 }
+
+.lyrics-column .section-content#lyrics-content.is-collapsed,
+.playlist-panel > .section-content#tracklist-content.is-collapsed { display: none; }

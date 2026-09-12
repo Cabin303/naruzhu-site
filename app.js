@@ -42,6 +42,19 @@ volume.addEventListener('input',()=>audio.volume=volume.value); audio.volume=vol
 for (const [id, url] of [['download-link', siteConfig.downloadUrl], ['support-link', siteConfig.supportUrl]]) { const link=document.querySelector(`#${id}`); if(url){link.href=url;link.target='_blank';link.rel='noopener';link.classList.remove('is-disabled');link.removeAttribute('aria-disabled');link.firstChild.textContent=id==='download-link'?'Скачать альбом ':'Поддержать ';} else link.addEventListener('click',event=>event.preventDefault()); }
 if(siteConfig.supportQr){const qr=document.querySelector('#support-qr');qr.textContent='';const image=document.createElement('img');image.src=siteConfig.supportQr;image.alt='QR-код для поддержки альбома';image.style.cssText='width:100%;height:100%;object-fit:contain;display:block';qr.append(image);}
 
+// ── Сворачиваемые секции ТЕКСТ / ТРЕКЛИСТ ──
+function toggleSection(btn,content){const expanded=btn.getAttribute('aria-expanded')!=='false';btn.setAttribute('aria-expanded',String(!expanded));content.classList.toggle('is-collapsed',expanded);}
+const lyricsToggle=document.querySelector('#lyrics-toggle'), lyricsContent=document.querySelector('#lyrics-content');
+if(lyricsToggle)lyricsToggle.addEventListener('click',()=>toggleSection(lyricsToggle,lyricsContent));
+const tracklistToggle=document.querySelector('#tracklist-toggle'), tracklistContent=document.querySelector('#tracklist-content');
+if(tracklistToggle)tracklistToggle.addEventListener('click',()=>toggleSection(tracklistToggle,tracklistContent));
+if(window.matchMedia('(max-width: 1000px)').matches){
+  if(lyricsToggle)lyricsToggle.setAttribute('aria-expanded','false');
+  if(lyricsContent)lyricsContent.classList.add('is-collapsed');
+  if(tracklistToggle)tracklistToggle.setAttribute('aria-expanded','false');
+  if(tracklistContent)tracklistContent.classList.add('is-collapsed');
+}
+
 // ── Сетка карточек треков: одна обложка, 8 кропов, из массива tracks ──
 const releaseGrid = document.querySelector('#releases-grid');
 function renderCards(){

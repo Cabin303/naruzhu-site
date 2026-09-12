@@ -83,14 +83,24 @@
               <p class="detail-description">Описание трека появится здесь.</p>
             </div>
             <div class="lyrics-column">
-              <p class="mini-label">Текст</p>
-              <pre id="lyrics"></pre>
+              <div class="lyrics-header">
+                <p class="mini-label">Текст</p>
+                <button class="toggle-btn" id="lyrics-toggle" type="button" aria-expanded="true" aria-controls="lyrics-content"><svg class="toggle-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5L6 8.5L10 4.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+              </div>
+              <div class="section-content" id="lyrics-content">
+                <pre id="lyrics"></pre>
+              </div>
             </div>
           </section>
         </section>
         <aside class="playlist-panel" aria-labelledby="playlist-title">
-          <div class="panel-heading"><p class="eyebrow">Треклист</p><h2 id="playlist-title">08 треков</h2></div>
-          <div class="tracklist" id="tracklist" aria-label="Треклист"></div>
+          <div class="panel-heading">
+            <div><p class="eyebrow">Треклист</p><h2 id="playlist-title">08 треков</h2></div>
+            <button class="toggle-btn" id="tracklist-toggle" type="button" aria-expanded="true" aria-controls="tracklist-content"><svg class="toggle-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5L6 8.5L10 4.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+          </div>
+          <div class="section-content" id="tracklist-content">
+            <div class="tracklist" id="tracklist" aria-label="Треклист"></div>
+          </div>
         </aside>
       </div>
     </section>
