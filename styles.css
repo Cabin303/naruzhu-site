@@ -513,7 +513,8 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
   .album-layout { grid-template-columns: 1fr; grid-template-areas: 'track-column' 'playlist'; }
   .playlist-panel { grid-area: playlist; }
   .track-column { grid-area: track-column; }
-  .track-detail { height: auto; min-height: 420px; }
+  .track-detail { height: auto; }
+  .detail-header, .lyrics-header { height: 77px; }
   .detail-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
   .detail-header .eyebrow { margin-bottom: 0; }
   .detail-toggle { display: grid; }
@@ -569,7 +570,8 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
   .player-title-row h2 { font-size: 30px; }
   .waveform-button canvas { height: 70px; }
   .track-detail { grid-template-columns: 1fr; gap: 28px; padding: 26px 20px 30px; }
-  .lyrics-column { border-left: 0; border-top: 1px solid var(--border); padding: 26px 0 0; }
+  .lyrics-column { border-left: 0; border-top: 1px solid var(--border); padding: 0; }
+  .detail-header, .lyrics-header { height: 71px; }
   .track-row { padding: 17px 20px; grid-template-columns: 26px 1fr auto; gap: 10px; }
   .panel-heading { padding: 22px 20px 16px; }
   .controls .volume-control input { height: 52px; }
