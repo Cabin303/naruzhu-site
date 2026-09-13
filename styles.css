@@ -519,7 +519,7 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
   .detail-header .eyebrow { margin-bottom: 0; }
   .detail-toggle { display: grid; }
   .lyrics-column { border-left: 0; }
-  .lyrics-column .section-content#lyrics-content { overflow: visible; background: var(--dim); }
+  .lyrics-column .section-content#lyrics-content { overflow-y: auto; overflow-x: hidden; background: var(--dim); max-height: 50vh; overscroll-behavior: contain; }
   .volume-control { display: none; }
   .playlist-panel .tracklist { max-height: 320px; }
 }
