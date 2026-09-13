@@ -360,6 +360,7 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
 .toggle-btn svg { display: block; }
 .toggle-chevron { transition: transform .2s ease; }
 .toggle-btn[aria-expanded="false"] .toggle-chevron { transform: rotate(-90deg); }
+.detail-toggle { display: none; }
 
 /* ── ТРЕКЛИСТ ─────────────────────────────────────────── */
 .panel-heading {
@@ -513,6 +514,9 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
   .playlist-panel { grid-area: playlist; }
   .track-column { grid-area: track-column; }
   .track-detail { height: auto; min-height: 420px; }
+  .detail-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .detail-header .eyebrow { margin-bottom: 0; }
+  .detail-toggle { display: grid; }
   .lyrics-column { border-left: 0; }
   .lyrics-column .section-content#lyrics-content { overflow: visible; background: var(--dim); }
   .volume-control { display: none; }
@@ -575,4 +579,5 @@ input[type=range]::-moz-range-thumb { width: 10px; height: 10px; border: 0; bord
 }
 
 .lyrics-column .section-content#lyrics-content.is-collapsed,
-.playlist-panel > .section-content#tracklist-content.is-collapsed { display: none; }
+.playlist-panel > .section-content#tracklist-content.is-collapsed,
+.detail-heading .section-content#detail-content.is-collapsed { display: none; }

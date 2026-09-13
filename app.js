@@ -59,14 +59,18 @@ if(siteConfig.supportQr){const qr=document.querySelector('#support-qr');qr.textC
 // ── Сворачиваемые секции ТЕКСТ / ТРЕКЛИСТ ──
 function toggleSection(btn,content){const expanded=btn.getAttribute('aria-expanded')!=='false';btn.setAttribute('aria-expanded',String(!expanded));content.classList.toggle('is-collapsed',expanded);}
 const lyricsToggle=document.querySelector('#lyrics-toggle'), lyricsContent=document.querySelector('#lyrics-content');
-if(lyricsToggle)lyricsToggle.addEventListener('click',()=>toggleSection(lyricsToggle,lyricsContent));
 const tracklistToggle=document.querySelector('#tracklist-toggle'), tracklistContent=document.querySelector('#tracklist-content');
+const detailHeader=document.querySelector('.detail-header'), detailToggle=document.querySelector('#detail-toggle'), detailContent=document.querySelector('#detail-content');
+if(lyricsToggle)lyricsToggle.addEventListener('click',()=>toggleSection(lyricsToggle,lyricsContent));
 if(tracklistToggle)tracklistToggle.addEventListener('click',()=>toggleSection(tracklistToggle,tracklistContent));
+if(detailHeader&&detailToggle&&detailContent)detailHeader.addEventListener('click',()=>{if(matchMedia('(max-width: 1000px)').matches)toggleSection(detailToggle,detailContent);});
 if(window.matchMedia('(max-width: 1000px)').matches){
   if(lyricsToggle)lyricsToggle.setAttribute('aria-expanded','false');
   if(lyricsContent)lyricsContent.classList.add('is-collapsed');
   if(tracklistToggle)tracklistToggle.setAttribute('aria-expanded','false');
   if(tracklistContent)tracklistContent.classList.add('is-collapsed');
+  if(detailToggle)detailToggle.setAttribute('aria-expanded','false');
+  if(detailContent)detailContent.classList.add('is-collapsed');
 }
 
 // ── Сетка карточек треков: одна обложка, 8 кропов, из массива tracks ──
